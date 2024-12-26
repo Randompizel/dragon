@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="index.css"> 
+
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#100F14" />
+    <meta
+      name="description"
+      content=""
+    />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800;900&family=Roboto+Flex:opsz,wght@8..144,400;8..144,500;8..144,600;8..144,700;8..144,800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <script src="https://unpkg.com/@solana/web3.js@latest/lib/index.iife.min.js"></script>
+    <script src="index.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <title>Lendragon Exchange</title>
+  </head>
+  <body>
+    
+    <header>
+      <div class="header-in">
+        <a href="" class="header-logo-wrap">
+          <img src="Logo.png" alt="" class="header-logo">
+          <span class="header-logo-txt">Lendragon.org</span>
+        </a>
+        <div class="header-navigate">
+           <a href="/docs" class="header-navigate-link">How it works</a>  
+           <a href="https://x.com/Lend_dragon" target="_blank" class="header-navigate-link">Twitter</a>  
+        </div>
+
+        <div class="wallet-container relative">
+          <div class="wallet-balance hidden">
+             <img src="sol-logo.png" alt="SOL" class="header-sol-logo">
+             <span class="balance-amount">0.00 SOL</span>
+          </div>
+          <button class="launch-app-btn font-press-start">Connect Wallet</button>
+
+          <div class="wallet-dropdown hidden absolute top-full right-0 mt-2 w-48 rounded-lg overflow-hidden bg-background border border-purple-500/20 shadow-xl z-50">
+            <div class="dropdown-option hover:bg-purple-500/10 px-4 py-3 cursor-pointer" onclick="handleDropdownOption('viewExplorer')">
+                <div class="flex items-center gap-2">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" class="header-connected-svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                    </svg>
+                    <span>View in Solscan</span>
+                </div>
+            </div>
+            <div class="border-t border-purple-500/10"></div>
+            <div class="dropdown-option hover:bg-purple-500/10 px-4 py-3 cursor-pointer" onclick="handleDropdownOption('disconnect')">
+                <div class="flex items-center gap-2">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path>
+                    </svg>
+                    <span>Disconnect</span>
+                </div>
+          </div>
+        </div>
+
+      </div>
+      </div>  
+    </header>
+
+
+
+    <main>
+       <div class="main-page-text-area">
+        <div>
+          <h1 class="main-page-text-area-first">MEME</h1>
+          <h1 class="main-page-text-area-second">Lending</h1>
+          <h1 class="main-page-text-area-second" style="    background: -webkit-linear-gradient(#e2e2e2, #e2e2e2);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          ">Reimagined</h1>
+        </div>
+        <div class="main-page-text-area-small">
+          <span>The First Meme-Powered Lending Protocol</span> 
+          <span>On <span class="main-apge-text-area-colored">Solana</span></span> 
+        </div>
+       </div>
+       <div class="main-page-mini-info-containers">
+         <div class="main-page-mini-info-container">
+           <span class="main-page-mini-info-container-title">Total Value Locked</span>  
+           <span class="main-page-mini-info-container-value">999k+ SOL</span>  
+           <div class="main-page-mini-info-container-bottom"><span class="main-page-mini-info-container-bottom-value-green"> ↑ 99.4% </span><span class="main-page-mini-info-container-bottom-value"> from last week</span></span>  </div>
+         </div> 
+ 
+         <div class="main-page-mini-info-container">
+           <span class="main-page-mini-info-container-title">Supported Tokens</span>  
+           <span class="main-page-mini-info-container-value">305 Tokens        </span>  
+           <div class="main-page-mini-info-container-bottom"><span class="main-page-mini-info-container-bottom-value-green"> +5 </span><span class="main-page-mini-info-container-bottom-value"> new this week</span></span>  </div>
+         </div>
+ 
+         <div class="main-page-mini-info-container">
+          <span class="main-page-mini-info-container-title">Average APY</span>  
+          <span class="main-page-mini-info-container-value">50 %</span>  
+          <div class="main-page-mini-info-container-bottom"><span class="main-page-mini-info-container-bottom-value"> Variable based on utilization
+         </span></span>  </div>
+         </div> 
+       </div>
+
+       <div class="main-page-section">
+        <h5 class="section-title">Features</h5>
+        <div class="features-containers">
+          <div class="features-container">
+            <div class="features-container-icon">🔒</div>
+            <h4 class="features-container-title">Secure Lending</h4>
+            <p class="features-container-desc">Battle-tested Anchor framework smart contracts with multiple security audits. Protected by Solana's robust account model and Program Derived Addresses (PDAs).</p>
+          </div>
+
+          <div class="features-container">
+            <div class="features-container-icon">💎</div>
+            <h4 class="features-container-title">Minimal Fees</h4>
+            <p class="features-container-desc">Average transaction cost of 0.000005 SOL (~$0.0004). No hidden fees or gas wars, just pure DeFi efficiency on Solana.</p>
+          </div>
+
+          <div class="features-container">
+            <div class="features-container-icon">⚡</div>
+            <h4 class="features-container-title">Fast Settlement</h4>
+            <p class="features-container-desc">200ms block times with instant transaction confirmations. Leverage Solana's parallel transaction processing for lightning-fast lending and borrowing.</p>
+          </div>
+
+          <div class="features-container">
+            <div class="features-container-icon">🌊</div>
+            <h4 class="features-container-title">Cross-Program Liquidity
+            </h4>
+            <p class="features-container-desc">Seamlessly integrate with Solana DEXs like OpenBook and Phoenix for deep memecoin liquidity. Composable with SPL tokens and other DeFi protocols.</p>
+          </div>
+
+          <div class="features-container">
+            <div class="features-container-icon">📈</div>
+            <h4 class="features-container-title">Oracle Integration</h4>
+            <p class="features-container-desc">Battle-tested Anchor framework smart contracts with multiple security audits. Protected by Solana's robust account model and Program Derived Addresses (PDAs).</p>
+          </div>
+
+          <div class="features-container">
+            <div class="features-container-icon">🤝</div>
+            <h4 class="features-container-title">Realms Governance</h4>
+            <p class="features-container-desc">Battle-tested Anchor framework smart contracts with multiple security audits. Protected by Solana's robust account model and Program Derived Addresses (PDAs).</p>
+          </div>
+        </div>
+       </div>
+
+       <div class="main-container-white-small">
+        <div class="main-container-white-small-contianer">
+            <p class="main-container-white-small-contianer-p">Active Users</p>
+           <h3 class="main-container-white-small-contianer-h3">1849</h3>
+        </div>
+        <div class="main-container-white-small-contianer">
+            <p class="main-container-white-small-contianer-p">Transactions</p>
+           <h3 class="main-container-white-small-contianer-h3">3074</h3>
+        </div>
+         <div class="main-container-white-small-contianer">
+           <p class="main-container-white-small-contianer-p">New Tokens this week</p>
+           <h3 class="main-container-white-small-contianer-h3">305</h3>
+         </div>
+         <div class="main-container-white-small-contianer">
+            <p class="main-container-white-small-contianer-p">Uptime</p>
+            <h3 class="main-container-white-small-contianer-h3">9842.22%</h3>
+          </div>
+    </div>
+    </main>
+
+    <footer>
+       <div class="footer-in">
+
+        <div class="footer-top">
+            <div class="footer-top-container">
+                <a href="" class="footer-top-logo-txt">Lendragon<span class="footer-top-logo-txt-colored">.org</span></a>
+                <p class="footer-top-desc">Unlocking memecoin liquidity</p>
+             </div>
+
+            <div class="footer-top-container">
+               <h3 class="footer-top-container-title">Products</h3>
+               <div class="footer-top-container-d">
+                <a href="/exchange" class="footer-top-container-link">Lending</a>
+                <a href="/exchange" class="footer-top-container-link">Borrowing</a>
+               </div>
+            </div>
+            <div class="footer-top-container">
+                <h3 class="footer-top-container-title">Resources</h3>
+                <div class="footer-top-container-d">
+                 <a href="/docs" class="footer-top-container-link">Documentation</a>
+                 <a href="" class="footer-top-container-link"><span style="opacity: 0.5; cursor: not-allowed;">API</span><span class="footer-soon">Soon</span></a>
+                 <a href="" class="footer-top-container-link"><span style="opacity: 0.5; cursor: not-allowed;">Status</span><span class="footer-soon">Soon</span></a>
+                </div>
+             </div>
+             <div class="footer-top-container">
+                <h3 class="footer-top-container-title">Community</h3>
+                <div class="footer-top-container-d">
+                  <a href="https://x.com/Lend_dragon" class="footer-top-container-link">Twitter</a>
+                  <a href="" class="footer-top-container-link"><span style="opacity: 0.5; cursor: not-allowed;">Blog</span><span class="footer-soon">Soon</span></a>
+                </div>
+             </div>
+        </div>  
+
+        <div class="footer-bottom">
+            <p class="footer-bottom-desc">
+                Lend.Meme provides information about the decentralized meme token lending protocol on Solana. 
+                The protocol consists of self-executing programs deployed to the Solana network that operate
+                autonomously without central control.
+            </p>
+            <p class="footer-bottom-desc"> © 2024 lendragon.org. All rights reserved.</p>
+        </div>
+       </div> 
+    </footer>
+
+
+  </body>
+</html>

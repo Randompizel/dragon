@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="index.css"> 
+    <link rel="stylesheet" href="exchange.css"> 
+
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#100F14" />
+    <meta
+      name="description"
+      content=""
+    />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800;900&family=Roboto+Flex:opsz,wght@8..144,400;8..144,500;8..144,600;8..144,700;8..144,800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <script src="https://unpkg.com/@solana/web3.js@latest/lib/index.iife.min.js"></script>
+    <script src="index.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <title>Lendragon Exchange</title>
+  </head>
+  <body>
+    
+    <header>
+      <div class="header-in">
+        <a href="" class="header-logo-wrap">
+          <img src="Logo.png" alt="" class="header-logo">
+          <span class="header-logo-txt">Lendragon.org</span>
+        </a>
+        <div class="header-navigate">
+           <a href="/docs" class="header-navigate-link">How it works</a>  
+           <a href="https://x.com/Lend_dragon" target="_blank" class="header-navigate-link">Twitter</a>  
+        </div>
+
+        <div class="wallet-container relative">
+          <div class="wallet-balance hidden">
+             <img src="sol-logo.png" alt="SOL" class="header-sol-logo">
+             <span class="balance-amount">0.00 SOL</span>
+          </div>
+          <button class="launch-app-btn font-press-start">Connect Wallet</button>
+
+          <div class="wallet-dropdown hidden absolute top-full right-0 mt-2 w-48 rounded-lg overflow-hidden bg-background border border-purple-500/20 shadow-xl z-50">
+            <div class="dropdown-option hover:bg-purple-500/10 px-4 py-3 cursor-pointer" onclick="handleDropdownOption('viewExplorer')">
+                <div class="flex items-center gap-2">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" class="header-connected-svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                    </svg>
+                    <span>View in Solscan</span>
+                </div>
+            </div>
+            <div class="border-t border-purple-500/10"></div>
+            <div class="dropdown-option hover:bg-purple-500/10 px-4 py-3 cursor-pointer" onclick="handleDropdownOption('disconnect')">
+                <div class="flex items-center gap-2">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path>
+                    </svg>
+                    <span>Disconnect</span>
+                </div>
+          </div>
+        </div>
+
+      </div>
+      </div>  
+    </header>
+
+
+
+    <main> 
+       <div class="main-exc">
+        <div class="main-exc-container">
+          <div class="main-exc-container-header">
+            <h5 class="main-exc-container-title">Supply Assets</h5>
+            <p class="main-exc-container-desc">Earn interest by supplying assets to the protocol</p>
+          </div> 
+          
+          <div class="main-exc-main-container">
+            <div class="main-docs-table">
+                <div class="main-docs-table-in main-docs-table-in-header">
+                   <div class="main-docs-table-in-container">Asset</div> 
+                   <div class="main-docs-table-in-container">Market Cap	</div> 
+                   <div class="main-docs-table-in-container">APY	</div> 
+                   <div class="main-docs-table-in-container">Balance</div> 
+                </div>  
+                <div id="exhange-list">
+                    <div class="main-docs-table-in" id="supply-open-pop">
+                        <div class="main-docs-table-in-container value-table"><img src="bonk.jpg" alt="" class="coin-image"><span>BONK</span></div> 
+                        <div class="main-docs-table-in-container value-table">$2.34B</div> 
+                        <div class="main-docs-table-in-container value-table green">35%</div> 
+                        <div class="main-docs-table-in-container value-table">0.00 BONK</div> 
+                     </div>  
+                     <div class="main-docs-table-in" id="supply-open-pop">
+                        <div class="main-docs-table-in-container value-table"><img src="fart.png" alt="" class="coin-image"><span>FARTCOIN</span></div> 
+                        <div class="main-docs-table-in-container value-table">$913.64M</div> 
+                        <div class="main-docs-table-in-container value-table green">55%</div> 
+                        <div class="main-docs-table-in-container value-table">0.00 FARTCOIN</div> 
+                     </div> 
+                     <div class="main-docs-table-in" id="supply-open-pop">
+                        <div class="main-docs-table-in-container value-table"><img src="dogwifhat.jpg" alt="" class="coin-image"><span>$WIF</span></div> 
+                        <div class="main-docs-table-in-container value-table">$1.91B</div> 
+                        <div class="main-docs-table-in-container value-table green">55%</div> 
+                        <div class="main-docs-table-in-container value-table">0.00 $WIF</div> 
+                     </div> 
+                     <div class="main-docs-table-in" id="supply-open-pop">
+                        <div class="main-docs-table-in-container value-table"><img src="pin.png" alt="" class="coin-image"><span>PENGU</span></div> 
+                        <div class="main-docs-table-in-container value-table">$1.72B</div> 
+                        <div class="main-docs-table-in-container value-table green">95%</div> 
+                        <div class="main-docs-table-in-container value-table">0.00 PENGU</div> 
+                     </div> 
+                     <div class="main-docs-table-in" id="supply-open-pop">
+                        <div class="main-docs-table-in-container value-table"><img src="cat.jpg" alt="" class="coin-image"><span>POPCAT</span></div> 
+                        <div class="main-docs-table-in-container value-table">$734.31M</div> 
+                        <div class="main-docs-table-in-container value-table green">75%</div> 
+                        <div class="main-docs-table-in-container value-table">0.00 POPCAT</div> 
+                     </div> 
+                     <div class="main-docs-table-in" id="supply-open-pop">
+                        <div class="main-docs-table-in-container value-table"><img src="pnut.png" alt="" class="coin-image"><span>PNUT</span></div> 
+                        <div class="main-docs-table-in-container value-table">$719.25M</div> 
+                        <div class="main-docs-table-in-container value-table green">65%</div> 
+                        <div class="main-docs-table-in-container value-table">0.00 PNUT</div> 
+                     </div> 
+                     <div class="main-docs-table-in" id="supply-open-pop">
+                        <div class="main-docs-table-in-container value-table"><img src="goat.jpg" alt="" class="coin-image"><span>GOAT</span></div> 
+                        <div class="main-docs-table-in-container value-table">$519.32M</div> 
+                        <div class="main-docs-table-in-container value-table green">66%</div> 
+                        <div class="main-docs-table-in-container value-table">0.00 GOAT</div> 
+                     </div> 
+                     <div class="main-docs-table-in" id="supply-open-pop">
+                        <div class="main-docs-table-in-container value-table"><img src="zero.png" alt="" class="coin-image"><span>ZEROBRO</span></div> 
+                        <div class="main-docs-table-in-container value-table">$312.27M</div> 
+                        <div class="main-docs-table-in-container value-table green">65%</div> 
+                        <div class="main-docs-table-in-container value-table">0.00 ZEROBRO</div> 
+                     </div> 
+                     <div class="main-docs-table-in" id="supply-open-pop">
+                        <div class="main-docs-table-in-container value-table"><img src="chill.png" alt="" class="coin-image"><span>CHILL</span></div> 
+                        <div class="main-docs-table-in-container value-table">$180.71M</div> 
+                        <div class="main-docs-table-in-container value-table green">65%</div> 
+                        <div class="main-docs-table-in-container value-table">0.00 CHILL</div> 
+                     </div> 
+                     <div class="main-docs-table-in" id="supply-open-pop">
+                        <div class="main-docs-table-in-container value-table"><img src="luce.jpg" alt="" class="coin-image"><span>LUCE</span></div> 
+                        <div class="main-docs-table-in-container value-table">$83.34M</div> 
+                        <div class="main-docs-table-in-container value-table green">65%</div> 
+                        <div class="main-docs-table-in-container value-table">0.00 LUCE</div> 
+                     </div> 
+                     <div class="main-docs-table-in" id="supply-open-pop">
+                        <div class="main-docs-table-in-container value-table"><img src="myro.png" alt="" class="coin-image"><span>MYRO</span></div> 
+                        <div class="main-docs-table-in-container value-table">$67.72M</div> 
+                        <div class="main-docs-table-in-container value-table green">65%</div> 
+                        <div class="main-docs-table-in-container value-table">0.00 MYRO</div> 
+                     </div> 
+                     
+                    </div>
+                </div>
+          </div>
+        </div>
+
+
+        <div class="main-exc-container">
+            <div class="main-exc-container-header">
+              <h5 class="main-exc-container-title">Borrow Assets</h5>
+              <p class="main-exc-container-desc">Borrow against your supplied collateral</p>
+            </div> 
+            
+            <div class="main-exc-main-container">
+              <div class="main-docs-table">
+                  <div class="main-docs-table-in main-docs-table-in-header">
+                     <div class="main-docs-table-in-container">Asset</div> 
+                     <div class="main-docs-table-in-container">Market Cap	</div> 
+                     <div class="main-docs-table-in-container">APY	</div> 
+                     <div class="main-docs-table-in-container">Available</div> 
+                  </div>  
+                  <div class="main-docs-table-in" id="borrow-open-pop">
+                    <div class="main-docs-table-in-container value-table"><img src="bonk.jpg" alt="" class="coin-image"><span>BONK</span></div> 
+                    <div class="main-docs-table-in-container value-table">$2.34B</div> 
+                    <div class="main-docs-table-in-container value-table red">35%</div> 
+                    <div class="main-docs-table-in-container value-table">0.00 BONK</div> 
+                 </div> 
+                 <div class="main-docs-table-in" id="borrow-open-pop">
+                  <div class="main-docs-table-in-container value-table"><img src="fart.png" alt="" class="coin-image"><span>FARTCOIN</span></div> 
+                  <div class="main-docs-table-in-container value-table">$913.64M</div> 
+                  <div class="main-docs-table-in-container value-table red">35%</div> 
+                  <div class="main-docs-table-in-container value-table">0.00 FARTCOIN</div> 
+                </div>  
+                 <div class="main-docs-table-in"id="borrow-open-pop">
+                    <div class="main-docs-table-in-container value-table"><img src="dogwifhat.jpg" alt="" class="coin-image"><span>$WIF</span></div> 
+                    <div class="main-docs-table-in-container value-table">$1.91B</div> 
+                    <div class="main-docs-table-in-container value-table red">55%</div> 
+                    <div class="main-docs-table-in-container value-table">0.00 $WIF</div> 
+                 </div> 
+                 <div class="main-docs-table-in" id="borrow-open-pop">
+                    <div class="main-docs-table-in-container value-table"><img src="pin.png" alt="" class="coin-image"><span>PENGU</span></div> 
+                    <div class="main-docs-table-in-container value-table">$1.72B</div> 
+                    <div class="main-docs-table-in-container value-table red">95%</div> 
+                    <div class="main-docs-table-in-container value-table">0.00 PENGU</div> 
+                 </div> 
+                 <div class="main-docs-table-in" id="borrow-open-pop">
+                    <div class="main-docs-table-in-container value-table"><img src="cat.jpg" alt="" class="coin-image"><span>POPCAT</span></div> 
+                    <div class="main-docs-table-in-container value-table">$734.31M</div> 
+                    <div class="main-docs-table-in-container value-table red">75%</div> 
+                    <div class="main-docs-table-in-container value-table">0.00 POPCAT</div> 
+                 </div> 
+                 <div class="main-docs-table-in" id="borrow-open-pop">
+                    <div class="main-docs-table-in-container value-table"><img src="pnut.png" alt="" class="coin-image"><span>PNUT</span></div> 
+                    <div class="main-docs-table-in-container value-table">$719.25M</div> 
+                    <div class="main-docs-table-in-container value-table red">65%</div> 
+                    <div class="main-docs-table-in-container value-table">0.00 PNUT</div> 
+                 </div> 
+                 <div class="main-docs-table-in" id="borrow-open-pop">
+                    <div class="main-docs-table-in-container value-table"><img src="goat.jpg" alt="" class="coin-image"><span>GOAT</span></div> 
+                    <div class="main-docs-table-in-container value-table">$519.32M</div> 
+                    <div class="main-docs-table-in-container value-table red">66%</div> 
+                    <div class="main-docs-table-in-container value-table">0.00 GOAT</div> 
+                 </div> 
+                 <div class="main-docs-table-in" id="borrow-open-pop">
+                    <div class="main-docs-table-in-container value-table"><img src="zero.png" alt="" class="coin-image"><span>ZEROBRO</span></div> 
+                    <div class="main-docs-table-in-container value-table">$312.27M</div> 
+                    <div class="main-docs-table-in-container value-table red">65%</div> 
+                    <div class="main-docs-table-in-container value-table">0.00 ZEROBRO</div> 
+                 </div> 
+                 <div class="main-docs-table-in" id="borrow-open-pop">
+                    <div class="main-docs-table-in-container value-table"><img src="chill.png" alt="" class="coin-image"><span>CHILL</span></div> 
+                    <div class="main-docs-table-in-container value-table">$180.71M</div> 
+                    <div class="main-docs-table-in-container value-table red">65%</div> 
+                    <div class="main-docs-table-in-container value-table">0.00 CHILL</div> 
+                 </div> 
+                 <div class="main-docs-table-in" id="borrow-open-pop">
+                    <div class="main-docs-table-in-container value-table"><img src="luce.jpg" alt="" class="coin-image"><span>LUCE</span></div> 
+                    <div class="main-docs-table-in-container value-table">$83.34M</div> 
+                    <div class="main-docs-table-in-container value-table red">65%</div> 
+                    <div class="main-docs-table-in-container value-table">0.00 LUCE</div> 
+                 </div> 
+                 <div class="main-docs-table-in" id="borrow-open-pop">
+                    <div class="main-docs-table-in-container value-table"><img src="myro.png" alt="" class="coin-image"><span>MYRO</span></div> 
+                    <div class="main-docs-table-in-container value-table">$67.72M</div> 
+                    <div class="main-docs-table-in-container value-table red">65%</div> 
+                    <div class="main-docs-table-in-container value-table">0.00 MYRO</div> 
+                 </div> 
+                 
+                </div>
+            </div>
+          </div>
+        
+       </div> 
+
+        <div class="popup" id="popup" style="display: none;">
+          <div class="popup-container">
+            <div class="popup-header">
+              <button class="popup-header-btn active" id="btn_supply">Supply</button>
+              <button class="popup-header-btn" id="btn_withdraw">Withdraw</button>
+            </div>
+            <div class="popup-container-in"> 
+                <button class="popup-close" id="close-pop">X</button> 
+
+               <div class="popup-container-in-gap">
+                <span class="popup-title">Supply AMOUNT</span>
+                <span class="popup-title"><span>Wallet Balance:</span> <span class="popup-title-booelan">0.00 <span id="coin"></span></span></span>
+               </div> 
+               <div class="popup-container-in-input-wrap">
+                <input type="text" placeholder="0.00" class="popup-container-in-input">
+                <div id="coin">BONK</div>
+               </div>
+               
+               <div class="popup-container-in-gap">
+                <span class="popup-title"><span class="popup-title-booelan">SUPPLY STATS</span></span>
+               </div> 
+
+               <div class="popup-container-in-gap">
+                <span class="popup-title">Supply APY</span>
+                <span class="popup-title">0.00%</span>
+               </div> 
+
+               <div class="popup-container-in-gap">
+                <span class="popup-title">Supply Balance </span>
+                <span class="popup-title">0 <span id="coin">BONK</span></span>
+               </div> 
+
+
+               <div class="popup-container-in-gap top-30-margin">
+                <span class="popup-title"><span class="popup-title-booelan">COLLATERAL</span></span>
+               </div> 
+
+               <div class="popup-container-in-gap">
+                <span class="popup-title">Collateral Factor</span>
+                <span class="popup-title">70.00%</span>
+               </div> 
+
+               <div class="popup-container-in-gap">
+                <span class="popup-title">Used as Collateral</span>
+                <span class="popup-title">No</span>
+               </div> 
+
+
+               <button class="popup-container-bottom-btn" id="popup-btn-action">Supply</button>
+            </div>
+          </div>
+        </div>
+
+    </main>
+
+    <script>
+        let btn_supply = document.getElementById("btn_supply")
+        let btn_withdraw = document.getElementById("btn_withdraw")
+
+        let button_elements = document.querySelectorAll("[id='supply-open-pop']") 
+
+        let withdraw_mode = false
+
+        for(let i = 0; i < button_elements.length; i++) {
+          button_elements[i].addEventListener("click", () => {
+           withdraw_mode = true
+
+           btn_supply.innerText = "Suppply"
+           btn_withdraw.innerText = "Withdraw"
+           button_action.innerText = "Supply"
+
+           let coin_name = button_elements[i].querySelector("span").innerText
+           coin.innerText = coin_name
+           poup.style.display="block"
+
+           let coin_elements = document.querySelectorAll("[id='coin']") 
+     
+           for(let i = 0; i < coin_elements.length; i++) {
+            coin_elements[i].innerText = coin_name
+           }
+          })
+        }
+
+
+
+        
+
+        let supply_open_pop_btn = document.getElementById("supply-open-pop")
+        let close_pop_btn = document.getElementById("close-pop")
+        let poup = document.getElementById("popup")
+
+
+        let borrow_open_pop_btn = document.querySelectorAll("[id='borrow-open-pop']") 
+
+
+        for(let i = 0; i < borrow_open_pop_btn.length; i++) {
+         borrow_open_pop_btn[i].addEventListener("click", () => {
+           withdraw_mode = false
+           button_action.innerText = "Borrow"
+           let coin_name = button_elements[i].querySelector("span").innerText
+           coin.innerText = coin_name
+           poup.style.display="block"
+
+           btn_supply.innerText = "Borrow"
+           btn_withdraw.innerText = "Repay"
+
+           let coin_elements = document.querySelectorAll("[id='coin']") 
+     
+           for(let i = 0; i < coin_elements.length; i++) {
+            coin_elements[i].innerText = coin_name
+           }
+         })
+        }
+
+
+        
+        let button_action = document.getElementById("popup-btn-action")
+
+    
+
+        btn_withdraw.addEventListener("click", () => {
+           btn_withdraw.classList.add("active")
+           btn_supply.classList.remove("active")
+           if(withdraw_mode) {
+            button_action.innerText = "Withdraw"
+           } else {
+            button_action.innerText = "Repay"
+           }
+           
+        })
+
+        btn_supply.addEventListener("click", () => {
+           btn_supply.classList.add("active") 
+           btn_withdraw.classList.remove("active")
+           button_action.innerText = "Supply"
+           if(withdraw_mode) {
+            button_action.innerText = "Supply"
+           } else {
+            button_action.innerText = "Borrow"
+           }
+        })
+
+        close_pop_btn.addEventListener("click", () => {
+          poup.style.display="none"
+        })
+
+    </script>
+  </body>
+</html>

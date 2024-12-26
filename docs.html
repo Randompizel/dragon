@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="index.css"> 
+    <link rel="stylesheet" href="docs.css"> 
+
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#100F14" />
+    <meta
+      name="description"
+      content=""
+    />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <script src="index.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800;900&family=Roboto+Flex:opsz,wght@8..144,400;8..144,500;8..144,600;8..144,700;8..144,800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <script src="https://unpkg.com/@solana/web3.js@latest/lib/index.iife.min.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <title>Lendragon Exchange</title>
+  </head>
+  <body>
+    <header>
+      <div class="header-in">
+        <a href="" class="header-logo-wrap">
+          <img src="Logo.png" alt="" class="header-logo">
+          <span class="header-logo-txt">Lendragon.org</span>
+        </a>
+        <div class="header-navigate">
+           <a href="/docs" class="header-navigate-link">How it works</a>  
+           <a href="https://x.com/Lend_dragon" target="_blank" class="header-navigate-link">Twitter</a>  
+        </div>
+
+        <div class="wallet-container relative">
+          <div class="wallet-balance hidden">
+             <img src="sol-logo.png" alt="SOL" class="header-sol-logo">
+             <span class="balance-amount">0.00 SOL</span>
+          </div>
+          <button class="launch-app-btn font-press-start">Connect Wallet</button>
+
+          <div class="wallet-dropdown hidden absolute top-full right-0 mt-2 w-48 rounded-lg overflow-hidden bg-background border border-purple-500/20 shadow-xl z-50">
+            <div class="dropdown-option hover:bg-purple-500/10 px-4 py-3 cursor-pointer" onclick="handleDropdownOption('viewExplorer')">
+                <div class="flex items-center gap-2">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" class="header-connected-svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                    </svg>
+                    <span>View in Solscan</span>
+                </div>
+            </div>
+            <div class="border-t border-purple-500/10"></div>
+            <div class="dropdown-option hover:bg-purple-500/10 px-4 py-3 cursor-pointer" onclick="handleDropdownOption('disconnect')">
+                <div class="flex items-center gap-2">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path>
+                    </svg>
+                    <span>Disconnect</span>
+                </div>
+          </div>
+        </div>
+      </div>
+      </div>  
+    </header>
+
+ <main class="main-docs-d">
+  <div class="main-docs">
+
+    <div class="main-docs-container">
+        <h6 class="main-docs-container-title">Support</h6> 
+        
+        
+
+        <div class="main-docs-container-in">
+          <div class="main-docs-container-in-requirement-con">
+            <div class="main-docs-container-in-requirement-con-icon">📧</div> 
+            <div>
+              <h1 class="main-docs-container-in-requirement-con-title">Email</h1>
+              <p class="main-docs-container-in-requirement-con-desc"><a href="mailto:support@lendragon.org" class="main-docs-container-in-requirement-con-desc">support@Lendragon.org</a></p>
+            </div> 
+        </div>
+        </div>
+
+          
+
+    
+   </div>
+
+     <div class="main-docs-container">
+          <h6 class="main-docs-container-title">Getting Started</h6> 
+          
+          <div class="main-docs-container-in">
+            <h6 class="main-docs-container-in-title">Quick Overview</h6> 
+            <p class="main-docs-container-in-desc">Lendragon.org is the first decentralized lending protocol built specifically for meme tokens on Solana. Supply your favorite meme tokens to earn interest, or borrow against them to leverage your positions.            </p>
+            <div class="main-docs-container-in-cotnaiers">
+              <div class="main-docs-container-in-container">
+                <div class="main-docs-container-in-container-title">💰 Earn Interest</div>
+                <p class="main-docs-container-in-container-desc">Supply meme tokens and earn interest from borrowers plus additional $LEND rewards.</p>
+              </div>  
+              <div class="main-docs-container-in-container">
+                <div class="main-docs-container-in-container-title">🚀 Leverage Trading                </div>
+                <p class="main-docs-container-in-container-desc">Borrow against your meme tokens to leverage long or short positions.                </p>
+              </div>  
+              <div class="main-docs-container-in-container">
+                <div class="main-docs-container-in-container-title">⚡ Ultra Fast                </div>
+                <p class="main-docs-container-in-container-desc">Built on Solana for lightning-fast transactions and minimal fees.                </p>
+              </div>  
+            </div>
+          </div> 
+
+          <div class="main-docs-container-in">
+            <h6 class="main-docs-container-in-title">Requirements</h6> 
+            <div class="main-docs-container-in-requirement-con">
+              <div class="main-docs-container-in-requirement-con-icon">🦊</div> 
+              <div>
+                <h1 class="main-docs-container-in-requirement-con-title">Solana Wallet</h1>
+                <p class="main-docs-container-in-requirement-con-desc">Install Phantom, Solflare, or any Solana wallet browser extension. </p>
+              </div> 
+            </div>
+
+            <div class="main-docs-container-in-requirement-con">
+              <div class="main-docs-container-in-requirement-con-icon">💎</div> 
+              <div>
+                <h1 class="main-docs-container-in-requirement-con-title">SOL for Gas</h1>
+                <p class="main-docs-container-in-requirement-con-desc">Keep a small amount of SOL (~0.01) for transaction fees.</p>
+              </div> 
+            </div>
+
+            <div class="main-docs-container-in-requirement-con">
+                <div class="main-docs-container-in-requirement-con-icon">✳️</div> 
+                <div>
+                  <h1 class="main-docs-container-in-requirement-con-title">Meme Tokens</h1>
+                  <p class="main-docs-container-in-requirement-con-desc">The following tokens are supported by the protocol:</p>
+                </div> 
+            </div>
+            <div class="main-docs-container-in-requirement-con-desc-container">
+               <div>
+                 <h4 class="main-docs-container-in-requirement-con-desc-container-title">BONK</h4>
+                 <p class="main-docs-container-in-requirement-con-desc-container-desc">DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263</p>
+               </div> 
+               <div>
+                <h4 class="main-docs-container-in-requirement-con-desc-container-title">MYRO</h4>
+                <p class="main-docs-container-in-requirement-con-desc-container-desc">HhJpBhRRn4g56VsyLuT8DL5Bv31HkXqsrahTTUCZeZg4</p>
+              </div> 
+              <div>
+                <h4 class="main-docs-container-in-requirement-con-desc-container-title">GOAT</h4>
+                <p class="main-docs-container-in-requirement-con-desc-container-desc">CzLSujWBLFsSjncfkh59rUFqvafWcY5tzedWJSuypump</p>
+              </div> 
+              <div>
+                <h4 class="main-docs-container-in-requirement-con-desc-container-title">$WIF</h4>
+                <p class="main-docs-container-in-requirement-con-desc-container-desc">EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm</p>
+              </div> 
+              <div>
+                <h4 class="main-docs-container-in-requirement-con-desc-container-title">ZEREBRO</h4>
+                <p class="main-docs-container-in-requirement-con-desc-container-desc">8x5VqbHA8D7NkD52uNuS5nnt3PwA8pLD34ymskeSo2Wn</p>
+              </div> 
+              <div>
+                <h4 class="main-docs-container-in-requirement-con-desc-container-title">PNUT</h4>
+                <p class="main-docs-container-in-requirement-con-desc-container-desc">2qEHjDLDLbuBgRYvsxhc5D6uDWAivNFZGan56P1tpump</p>
+              </div> 
+              <div>
+                <h4 class="main-docs-container-in-requirement-con-desc-container-title">CHILLGUY</h4>
+                <p class="main-docs-container-in-requirement-con-desc-container-desc">Df6yfrKC8kZE3KNkrHERKzAetSxbrWeniQfyJY4Jpump</p>
+              </div> 
+              <div>
+                <h4 class="main-docs-container-in-requirement-con-desc-container-title">POPCAT</h4>
+                <p class="main-docs-container-in-requirement-con-desc-container-desc">7GCihgDB8fe6KNjn2MYtkzZcRjQy3t9GHdC8uHYmW2hr</p>
+              </div> 
+            </div>
+          </div> 
+     </div>
+
+
+
+     <div class="main-docs-container">
+        <h6 class="main-docs-container-title">How It Works</h6> 
+        
+        <div class="main-docs-container-in">
+          <h6 class="main-docs-container-in-title">Protocol Overview</h6> 
+          <p class="main-docs-container-in-desc">Lendragon.org operates as a decentralized lending protocol specifically designed for meme tokens on Solana. Users can interact with isolated lending pools for each supported meme token, enabling lending and borrowing functionality.</p>
+          <div class="main-docs-container-in-cotnaiers main-docs-container-in-cotnaiers-two">
+            <div class="main-docs-container-in-container">
+              <div class="main-docs-container-in-container-title">🏊‍♂️ Lending Pools</div>
+              <p class="main-docs-container-in-container-desc">Each meme token has its own isolated lending pool that manages deposits, borrows, and interest rates independently.</p>
+            </div>  
+            <div class="main-docs-container-in-container">
+              <div class="main-docs-container-in-container-title">💱 Interest Model</div>
+              <p class="main-docs-container-in-container-desc">Dynamic interest rates that adjust based on pool utilization to maintain balanced lending and borrowing activity.</p>
+            </div>  
+          </div>
+        </div> 
+
+        <div class="main-docs-container-in">
+          <h6 class="main-docs-container-in-title">Basic Mechanics</h6> 
+          <div class="main-docs-container-in-requirement-con">
+            <div class="main-docs-container-in-requirement-con-icon">📥</div> 
+            <div>
+              <h1 class="main-docs-container-in-requirement-con-title">Supplying Tokens</h1>
+              <p class="main-docs-container-in-requirement-con-desc">When you supply tokens, you receive cTokens representing your deposit. These cTokens automatically earn interest based on protocol utilization.</p>
+            </div> 
+          </div>
+
+          <div class="main-docs-container-in-requirement-con">
+            <div class="main-docs-container-in-requirement-con-icon">📤</div> 
+            <div>
+              <h1 class="main-docs-container-in-requirement-con-title">Borrowing Tokens</h1>
+              <p class="main-docs-container-in-requirement-con-desc">Users can borrow tokens by providing collateral. The maximum borrow amount is determined by the collateral's value and the token's LTV ratio.</p>
+            </div> 
+          </div>
+
+          <div class="main-docs-container-in-requirement-con">
+              <div class="main-docs-container-in-requirement-con-icon">⚖️</div> 
+              <div>
+                <h1 class="main-docs-container-in-requirement-con-title">Interest Rates</h1>
+                <p class="main-docs-container-in-requirement-con-desc">Interest rates are dynamic and based on utilization: Higher utilization = higher rates to encourage deposits Lower utilization = lower rates to encourage borrowing</p>
+              </div> 
+          </div>
+        </div> 
+
+        <div class="main-docs-container-in">
+            <h6 class="main-docs-container-in-title">Risk Parameters</h6> 
+            <p class="main-docs-container-in-desc">Each meme token in the protocol has specific risk parameters that govern lending and borrowing:</p>
+            
+            <div class="main-docs-container-in-cotnaiers main-docs-container-in-cotnaiers-two">
+              <div class="main-docs-container-in-container">
+                <div class="main-docs-container-in-container-title">🎯 LTV (Loan-to-Value)</div>
+                <p class="main-docs-container-in-container-desc">Maximum amount users can borrow against their collateral. Varies by token risk profile.</p>
+              </div>  
+
+              <div class="main-docs-container-in-container">
+                <div class="main-docs-container-in-container-title">⚠️ Liquidation Threshold</div>
+                <p class="main-docs-container-in-container-desc">The collateral ratio at which positions become eligible for liquidation.</p>
+              </div> 
+              
+              <div class="main-docs-container-in-container">
+                <div class="main-docs-container-in-container-title">🔄 Interest Model</div>
+                <p class="main-docs-container-in-container-desc">Optimal borrowing level for each pool to maintain sustainable rates.</p>
+              </div>  
+
+              <div class="main-docs-container-in-container">
+                <div class="main-docs-container-in-container-title">📊 Utilization Target</div>
+                <p class="main-docs-container-in-container-desc">Algorithm determining how interest rates adjust with utilization.</p>
+              </div>  
+
+            </div>
+        </div> 
+
+   </div>
+
+
+
+
+   <div class="main-docs-container">
+    <h6 class="main-docs-container-title">Supplying</h6> 
+    
+    <div class="main-docs-container-in">
+      <h6 class="main-docs-container-in-title">Overview</h6> 
+      <p class="main-docs-container-in-desc">Supplying meme tokens to Lend.Meme allows you to earn interest and rewards while maintaining the ability to withdraw your tokens at any time. Your supplied tokens can also be used as collateral for borrowing.</p>
+      <div class="main-docs-container-in-cotnaiers">
+        <div class="main-docs-container-in-container">
+          <div class="main-docs-container-in-container-title">📈 Earn APY</div>
+          <p class="main-docs-container-in-container-desc">Earn interest from borrowers based on pool utilization rates.</p>
+        </div>  
+        <div class="main-docs-container-in-container">
+          <div class="main-docs-container-in-container-title">🎁 Extra Rewards</div>
+          <p class="main-docs-container-in-container-desc">Receive additional $MEME rewards for supporting the protocol. </p>
+        </div>  
+        <div class="main-docs-container-in-container">
+            <div class="main-docs-container-in-container-title">🔓 Flexible Access</div>
+            <p class="main-docs-container-in-container-desc">Withdraw your tokens anytime, subject to pool liquidity.</p>
+          </div> 
+      </div>
+    </div> 
+
+
+
+    <div class="main-docs-container-in">
+      <h6 class="main-docs-container-in-title">How to Supply</h6> 
+      <div class="main-docs-container-in-requirement-con">
+        <div class="main-docs-container-in-requirement-con-icon">1️⃣</div> 
+        <div>
+          <h1 class="main-docs-container-in-requirement-con-title">Supplying Tokens</h1>
+          <p class="main-docs-container-in-requirement-con-desc">Choose the meme token you want to supply from the available markets.</p>
+        </div> 
+      </div>
+
+      <div class="main-docs-container-in-requirement-con">
+        <div class="main-docs-container-in-requirement-con-icon">2️⃣</div> 
+        <div>
+          <h1 class="main-docs-container-in-requirement-con-title">Borrowing Tokens</h1>
+          <p class="main-docs-container-in-requirement-con-desc">Specify how much you want to supply. You'll see the estimated APY and rewards.</p>
+        </div> 
+      </div>
+
+      <div class="main-docs-container-in-requirement-con">
+          <div class="main-docs-container-in-requirement-con-icon">3️⃣</div> 
+          <div>
+            <h1 class="main-docs-container-in-requirement-con-title">Approve & Supply</h1>
+            <p class="main-docs-container-in-requirement-con-desc">Approve the token access and confirm the supply transaction in your wallet.</p>
+          </div> 
+      </div>
+    </div> 
+
+    <div class="main-docs-container-in">
+        <h6 class="main-docs-container-in-title">Important Notes</h6> 
+        <p class="main-docs-container-in-desc">Each meme token in the protocol has specific risk parameters that govern lending and borrowing:</p>
+        
+        <div class="main-docs-container-in-cotnaiers main-docs-container-in-cotnaiers-two">
+          <div class="main-docs-container-in-container">
+            <div class="main-docs-container-in-container-title">💱 cTokens</div>
+            <p class="main-docs-container-in-container-desc">When you supply, you receive cTokens representing your deposit. These automatically earn interest through their exchange rate.</p>
+          </div>  
+
+          <div class="main-docs-container-in-container">
+            <div class="main-docs-container-in-container-title">🏦 Collateral</div>
+            <p class="main-docs-container-in-container-desc">Supplied tokens can be used as collateral for borrowing, with different tokens having different LTV ratios.</p>
+          </div> 
+          
+          <div class="main-docs-container-in-container">
+            <div class="main-docs-container-in-container-title">📊 APY Variables</div>
+            <p class="main-docs-container-in-container-desc">Be aware of market volatility and smart contract risks when supplying meme tokens.</p>
+          </div>  
+
+          <div class="main-docs-container-in-container">
+            <div class="main-docs-container-in-container-title">⚠️ Risks</div>
+            <p class="main-docs-container-in-container-desc">Algorithm determining how interest rates adjust with utilization.</p>
+          </div>  
+
+        </div>
+
+    </div> 
+
+   </div>
+
+
+
+
+
+   <div class="main-docs-container">
+    <h6 class="main-docs-container-title">Borrowing</h6> 
+    
+    <div class="main-docs-container-in">
+      <h6 class="main-docs-container-in-title">Overview</h6> 
+      <p class="main-docs-container-in-desc">Borrowing from Lend.Meme allows you to leverage your meme token positions or obtain tokens for trading while keeping your original position. All borrowing is secured by your supplied collateral.</p>
+      <div class="main-docs-container-in-cotnaiers">
+        <div class="main-docs-container-in-container">
+          <div class="main-docs-container-in-container-title">🔄 Leverage</div>
+          <p class="main-docs-container-in-container-desc">Borrow against your meme tokens to increase your position size.</p>
+        </div>  
+        <div class="main-docs-container-in-container">
+          <div class="main-docs-container-in-container-title">💸 Flexible Terms</div>
+          <p class="main-docs-container-in-container-desc">No fixed repayment schedule - borrow as long as you maintain collateral ratio.</p>
+        </div>  
+        <div class="main-docs-container-in-container">
+          <div class="main-docs-container-in-container-title">🎯 Multiple Uses</div>
+          <p class="main-docs-container-in-container-desc">Trade, provide liquidity, or leverage your positions.</p>
+        </div>  
+      </div>
+    </div> 
+
+    <div class="main-docs-container-in">
+      <h6 class="main-docs-container-in-title">How to Borrow</h6> 
+      <div class="main-docs-container-in-requirement-con">
+        <div class="main-docs-container-in-requirement-con-icon">1️⃣</div> 
+        <div>
+          <h1 class="main-docs-container-in-requirement-con-title">Supply Collateral</h1>
+          <p class="main-docs-container-in-requirement-con-desc">First, supply tokens that will serve as your collateral. Different tokens have different collateral factors.</p>
+        </div> 
+      </div>
+
+      <div class="main-docs-container-in-requirement-con">
+        <div class="main-docs-container-in-requirement-con-icon">2️⃣</div> 
+        <div>
+          <h1 class="main-docs-container-in-requirement-con-title">Select Token to Borrow</h1>
+          <p class="main-docs-container-in-requirement-con-desc">Choose which token you want to borrow. The amount you can borrow depends on your collateral value and the token's LTV ratio.</p>
+        </div> 
+      </div>
+
+      <div class="main-docs-container-in-requirement-con">
+          <div class="main-docs-container-in-requirement-con-icon">3️⃣</div> 
+          <div>
+            <h1 class="main-docs-container-in-requirement-con-title">Enter Amount & Confirm</h1>
+            <p class="main-docs-container-in-requirement-con-desc">Enter the amount to borrow and confirm the transaction. Monitor your health factor to avoid liquidation.</p>
+          </div> 
+      </div>
+     </div>
+
+     <div class="main-docs-container-in">
+        <h6 class="main-docs-container-in-title">Risk Management</h6> 
+        
+        <div class="main-docs-container-in-cotnaiers main-docs-container-in-cotnaiers-two">
+          <div class="main-docs-container-in-container">
+            <div class="main-docs-container-in-container-title">🎯 Health Factor</div>
+            <p class="main-docs-container-in-container-desc">Keep your health factor above 1 to avoid liquidation. The higher the number, the safer your position.</p>
+          </div>  
+
+          <div class="main-docs-container-in-container">
+            <div class="main-docs-container-in-container-title">⚖️ Collateral Ratio</div>
+            <p class="main-docs-container-in-container-desc">Each token has a specific LTV ratio that determines how much you can borrow against it.</p>
+          </div> 
+          
+          <div class="main-docs-container-in-container">
+            <div class="main-docs-container-in-container-title">📊 Interest Rates</div>
+            <p class="main-docs-container-in-container-desc">Borrow rates are variable and depend on pool utilization. Monitor rates to manage costs.</p>
+          </div>  
+
+          <div class="main-docs-container-in-container">
+            <div class="main-docs-container-in-container-title">⚠️ Liquidation Risk</div>
+            <p class="main-docs-container-in-container-desc">If your health factor drops below 1, your position may be liquidated with a penalty.</p>
+          </div>  
+
+        </div>
+     </div>
+     
+     <div class="main-docs-container-in">
+        <h6 class="main-docs-container-in-title">Current Parameters</h6> 
+        
+        <div class="main-docs-table">
+          <div class="main-docs-table-in">
+             <div class="main-docs-table-in-container">Token</div> 
+             <div class="main-docs-table-in-container">LTV Ratio	</div> 
+             <div class="main-docs-table-in-container">Liquidation Threshold	</div> 
+             <div class="main-docs-table-in-container">Liquidation Penalty</div> 
+          </div>  
+          <div class="main-docs-table-in">
+            <div class="main-docs-table-in-container value-table">BONK</div> 
+            <div class="main-docs-table-in-container value-table">60%</div> 
+            <div class="main-docs-table-in-container value-table">65%</div> 
+            <div class="main-docs-table-in-container value-table">5%</div> 
+         </div>  
+         <div class="main-docs-table-in">
+            <div class="main-docs-table-in-container value-table">WIF</div> 
+            <div class="main-docs-table-in-container value-table">60%</div> 
+            <div class="main-docs-table-in-container value-table">65%</div> 
+            <div class="main-docs-table-in-container value-table">5%</div> 
+         </div>  
+         <div class="main-docs-table-in">
+            <div class="main-docs-table-in-container value-table">BONK</div> 
+            <div class="main-docs-table-in-container value-table">60%</div> 
+            <div class="main-docs-table-in-container value-table">65%</div> 
+            <div class="main-docs-table-in-container value-table">5%</div> 
+         </div>  
+        </div>
+    </div>
+
+   </div>
+
+   <div class="main-docs-container">
+    <h6 class="main-docs-container-title">Interest Rates</h6> 
+    
+    <div class="main-docs-container-in">
+      <h6 class="main-docs-container-in-title">How Interest Works</h6> 
+      <p class="main-docs-container-in-desc">Interest rates in Lend.Meme are dynamic and adjust automatically based on market conditions. The primary factor determining rates is pool utilization - as more tokens are borrowed, rates increase to incentivize more deposits.</p>
+      <div class="main-docs-container-in-cotnaiers main-docs-container-in-cotnaiers-two">
+        <div class="main-docs-container-in-container">
+          <div class="main-docs-container-in-container-title">📊 Supply APY</div>
+          <p class="main-docs-container-in-container-desc">The interest rate earned by suppliers, derived from borrower interest payments and pool utilization.</p>
+        </div>  
+        <div class="main-docs-container-in-container">
+          <div class="main-docs-container-in-container-title">💸 Borrow APY</div>
+          <p class="main-docs-container-in-container-desc">The interest rate paid by borrowers, which increases with higher pool utilization.</p>
+        </div>  
+       
+      </div>
+    </div> 
+
+    <div class="main-docs-container-in">
+      <h6 class="main-docs-container-in-title">Interest Rate Model</h6> 
+      <div class="main-docs-container-in-requirement-con">
+        <div class="main-docs-container-in-requirement-con-icon">📈</div> 
+        <div>
+          <h1 class="main-docs-container-in-requirement-con-title">Utilization-Based Rates</h1>
+          <p class="main-docs-container-in-requirement-con-desc">
+            Interest rates follow a curve based on pool utilization: <br/>
+            • 0-50% utilization: Low, stable rates<br/>
+            • 50-80% utilization: Gradually increasing rates<br/>
+            • 80%+ utilization: Sharply increasing rates
+          </p>
+        </div> 
+      </div>
+
+      <div class="main-docs-container-in-requirement-con">
+        <div class="main-docs-container-in-requirement-con-icon">⚖️</div> 
+        <div>
+          <h1 class="main-docs-container-in-requirement-con-title">Rate Calculation</h1>
+          <p class="main-docs-container-in-requirement-con-desc">
+            Supply APY = Borrow APY × Utilization Rate<br/>
+            Utilization Rate = Total Borrowed / Total Supply
+          </p>
+        </div> 
+      </div>
+     </div>
+
+
+    <div class="main-docs-container-in">
+      <h6 class="main-docs-container-in-title">Current Rates</h6> 
+        
+      <div class="main-docs-table">
+        <div class="main-docs-table-in">
+           <div class="main-docs-table-in-container">Token</div> 
+           <div class="main-docs-table-in-container">Supply APY</div> 
+           <div class="main-docs-table-in-container">Borrow APY</div> 
+           <div class="main-docs-table-in-container">Utilization</div> 
+        </div>  
+        <div class="main-docs-table-in">
+            <div class="main-docs-table-in-container value-table">BONK</div> 
+            <div class="main-docs-table-in-container value-table green">98%</div> 
+            <div class="main-docs-table-in-container value-table red">-1%</div> 
+            <div class="main-docs-table-in-container value-table">80%</div> 
+         </div>  
+         <div class="main-docs-table-in">
+            <div class="main-docs-table-in-container value-table">WIF</div> 
+            <div class="main-docs-table-in-container value-table green">64%</div> 
+            <div class="main-docs-table-in-container value-table red">-7%</div> 
+            <div class="main-docs-table-in-container value-table">80%</div> 
+         </div>  
+         <div class="main-docs-table-in">
+            <div class="main-docs-table-in-container value-table">BONK</div> 
+            <div class="main-docs-table-in-container value-table green">86%</div> 
+            <div class="main-docs-table-in-container value-table red">-5%</div> 
+            <div class="main-docs-table-in-container value-table">80%</div> 
+         </div>  
+       </div>
+    </div>
+
+
+    <div class="main-docs-container-in">
+        <h6 class="main-docs-container-in-title">Additional Rewards</h6> 
+        
+        <div class="main-docs-container-in-cotnaiers main-docs-container-in-cotnaiers-two">
+          <div class="main-docs-container-in-container">
+            <div class="main-docs-container-in-container-title">🎁 $MEME Rewards</div>
+            <p class="main-docs-container-in-container-desc">Supply and borrow positions earn additional $MEME tokens as rewards. These are distributed monthly.</p>
+          </div>  
+
+          <div class="main-docs-container-in-container">
+            <div class="main-docs-container-in-container-title">🏆 Bonus Multipliers</div>
+            <p class="main-docs-container-in-container-desc">Longer deposit durations and higher amounts may qualify for bonus reward multipliers.</p>
+          </div> 
+          
+        </div>
+    </div>
+</div>
+
+
+
+
+<div class="main-docs-container">
+    <h6 class="main-docs-container-title">Liquidations</h6> 
+    
+    <div class="main-docs-container-in">
+      <h6 class="main-docs-container-in-title">How Liquidations Work</h6> 
+      <p class="main-docs-container-in-desc">Liquidations protect protocol solvency when borrowers' positions become undercollateralized. Your current "Borrow Balance" and "Supply Balance" are calculated using two oracles: Pyth (main) and Switchboard (backup).</p>
+      <div class="main-docs-container-in-cotnaiers main-docs-container-in-cotnaiers-two">
+        <div class="main-docs-container-in-container">
+          <div class="main-docs-container-in-container-title">🎯 Health Factor</div>
+          <p class="main-docs-container-in-container-desc">Visible in your Account Details screen. When the Health Bar reaches the orange line (Liquidation Threshold), your account becomes eligible for liquidation.</p>
+        </div>  
+        <div class="main-docs-container-in-container">
+          <div class="main-docs-container-in-container-title">⚖️ Liquidation Threshold</div>
+          <p class="main-docs-container-in-container-desc">Calculated based on the weighted average of all your deposited assets' individual thresholds.</p>
+        </div>  
+       
+      </div>
+    </div> 
+
+    <div class="main-docs-container-in">
+      <h6 class="main-docs-container-in-title">Liquidation Process</h6> 
+      <div class="main-docs-container-in-requirement-con">
+        <div class="main-docs-container-in-requirement-con-icon">📊</div> 
+        <div>
+          <h1 class="main-docs-container-in-requirement-con-title">When Liquidation Occurs</h1>
+          <p class="main-docs-container-in-requirement-con-desc">
+            When your position becomes eligible for liquidation:
+            <br/>
+            •Third Party Liquidators repay 20% of your loans<br/>
+            •They receive equivalent collateral plus 5% bonus<br/>
+            •The 5% bonus serves as a bounty to secure the protocol
+          </p>
+        </div> 
+      </div>
+
+      
+     </div>
+
+
+    <div class="main-docs-container-in">
+      <h6 class="main-docs-container-in-title">Liquidation Example</h6> 
+        
+      <div class="main-docs-container-in-cotnaiers cotnaiers-one">
+        <div class="main-docs-container-in-container">
+          <div class="main-docs-container-in-container-title">Example Scenario</div>
+          <p class="main-docs-container-in-container-desc">Initial Position: <br/> <br/>
+            • Bob supplies $10,000 BONK <br/>
+            • Borrows $7,500 of $WIF <br/>
+            • $WIF price increases 6.69% (borrowed amount now ~$8,000) <br/>
+            • Account becomes eligible for liquidation <br/> <br/>
+
+            • Liquidation Process: <br/> <br/>
+            
+            • Liquidator repays $1,600 (20% of $WIF loan) <br/>
+            • Receives $1,600 in BONK collateral<br/>
+            • Gets additional $80 (5%) as bonus<br/> <br/>
+
+            Final Result:<br/><br/>
+            
+            • Bob's remaining BONK: $8,320 ($10,000 - $1,600 - $80)<br/>
+            • Remaining $WIF borrow: $6,400 ($8,000 - $1,600)<br/>
+            • Liquidation Threshold reduced: 80% → 77%<br/>
+          </p>
+        </div>  
+      </div>
+    </div>
+
+
+    <div class="main-docs-container-in">
+        <h6 class="main-docs-container-in-title">Preventing Liquidation</h6> 
+        
+        <div class="main-docs-container-in-cotnaiers main-docs-container-in-cotnaiers-two">
+          <div class="main-docs-container-in-container">
+            <div class="main-docs-container-in-container-title">👀 Monitor Health</div>
+            <p class="main-docs-container-in-container-desc">Regularly check your Health Bar in Account Details to stay away from the orange line.</p>
+          </div>  
+
+          <div class="main-docs-container-in-container">
+            <div class="main-docs-container-in-container-title">💰 Maintain Buffer</div>
+            <p class="main-docs-container-in-container-desc">Keep your borrow amount well below the liquidation threshold to account for market volatility.</p>
+          </div> 
+
+          <div class="main-docs-container-in-container">
+            <div class="main-docs-container-in-container-title">➕ Add Collateral</div>
+            <p class="main-docs-container-in-container-desc">Supply additional collateral to improve your health factor when needed.</p>
+          </div> 
+
+          <div class="main-docs-container-in-container">
+            <div class="main-docs-container-in-container-title">📉 Reduce Debt</div>
+            <p class="main-docs-container-in-container-desc">Repay part of your borrowed amount to increase your safety margin.</p>
+          </div> 
+          
+        </div>
+    </div>
+</div>
+
+
+
+<div class="main-docs-container">
+    <h6 class="main-docs-container-title">Security</h6> 
+    
+    <div class="main-docs-container-in">
+      <h6 class="main-docs-container-in-title">Protocol Security</h6> 
+      <p class="main-docs-container-in-desc">Security is a top priority at Lend.Meme. Our protocol implements multiple layers of security measures to protect user funds and ensure protocol stability.</p>
+      <div class="main-docs-container-in-cotnaiers main-docs-container-in-cotnaiers-two">
+        <div class="main-docs-container-in-container">
+          <div class="main-docs-container-in-container-title">🔒 Smart Contract Security</div>
+          <p class="main-docs-container-in-container-desc">All smart contracts are audited by leading security firms and follow industry best practices.</p>
+        </div>  
+        <div class="main-docs-container-in-container">
+          <div class="main-docs-container-in-container-title">👁️ Oracle Security</div>
+          <p class="main-docs-container-in-container-desc">Dual oracle system using Pyth (primary) and Switchboard (backup) for reliable price feeds.</p>
+        </div>  
+       
+      </div>
+    </div> 
+
+    <div class="main-docs-container-in">
+      <h6 class="main-docs-container-in-title">Security Measures</h6> 
+      <div class="main-docs-container-in-requirement-con">
+        <div class="main-docs-container-in-requirement-con-icon">🛡️</div> 
+        <div>
+          <h1 class="main-docs-container-in-requirement-con-title">Protocol Safety Features</h1>
+          <p class="main-docs-container-in-requirement-con-desc">
+            • Real-time monitoring of protocol metrics<br/>
+            • Automatic pause mechanisms for unusual activity<br/>
+            • Market-specific borrowing limits<br/>
+            • Emergency shutdown capabilities<br/>
+          </p>
+        </div> 
+      </div>
+
+      <div class="main-docs-container-in-requirement-con">
+        <div class="main-docs-container-in-requirement-con-icon">🔍</div> 
+        <div>
+          <h1 class="main-docs-container-in-requirement-con-title">Risk Management</h1>
+          <p class="main-docs-container-in-requirement-con-desc">
+           • Conservative collateral factors<br/>
+           • Dynamic liquidation thresholds<br/>
+           • Market-specific supply caps<br/>
+           • Regular risk parameter reviews<br/>
+          </p>
+        </div> 
+      </div>
+
+      
+     </div>
+
+
+
+    <div class="main-docs-container-in">
+        <h6 class="main-docs-container-in-title">Technical Security</h6> 
+        
+        <div class="main-docs-container-in-cotnaiers main-docs-container-in-cotnaiers-two">
+          <div class="main-docs-container-in-container">
+            <div class="main-docs-container-in-container-title">⚡ Oracle Implementation</div>
+            <p class="main-docs-container-in-container-desc"> 
+              - Primary: Pyth Network<br/>
+              - Backup: Switchboard<br/>
+              - Price deviation checks<br/>
+              - Staleness checks<br/>
+            </p>
+          </div>  
+
+          <div class="main-docs-container-in-container">
+            <div class="main-docs-container-in-container-title">🔐 Access Controls</div>
+            <p class="main-docs-container-in-container-desc">
+              - Multi-signature governance<br/>
+              - Time-locked parameter changes<br/>
+              - Role-based permissions<br/>
+              - Admin action delays<br/>
+            </p>
+          </div> 
+        </div>
+    </div>
+
+    <div class="main-docs-container-in">
+        <h6 class="main-docs-container-in-title">Security Status</h6> 
+          
+        <div class="main-docs-table">
+          <div class="main-docs-table-in">
+             <div class="main-docs-table-in-container">Component</div> 
+             <div class="main-docs-table-in-container">Status</div> 
+             <div class="main-docs-table-in-container">Last Audit</div> 
+             <div class="main-docs-table-in-container">Auditor</div> 
+          </div>  
+           <div class="main-docs-table-in">
+              <div class="main-docs-table-in-container value-table">Core Protocol</div> 
+              <div class="main-docs-table-in-container value-table yellow">Pending</div> 
+              <div class="main-docs-table-in-container value-table">-</div> 
+              <div class="main-docs-table-in-container value-table">GabarFAV</div> 
+           </div>  
+         </div>
+      </div>
+
+      <div class="main-docs-container-in">
+        <h6 class="main-docs-container-in-title">Bug Bounty Program</h6> 
+        <p class="main-docs-container-in-desc">We maintain an active bug bounty program to incentivize the responsible disclosure of security vulnerabilities. Rewards are based on severity and potential impact.        </p>
+
+        <div class="main-docs-container-in-cotnaiers main-docs-container-in-cotnaiers-two">
+            <div class="main-docs-container-in-container">
+              <div class="main-docs-container-in-container-title">🎯 Scope </div>
+              <p class="main-docs-container-in-container-desc"> 
+               • Smart Contracts <br/>
+               • Oracle Integrations <br/>
+               • Economic Logic <br/>
+               • Protocol Parameters <br/>
+              </p>
+            </div>  
+  
+            <div class="main-docs-container-in-container">
+              <div class="main-docs-container-in-container-title">💰 Rewards</div>
+              <p class="main-docs-container-in-container-desc">
+               • Critical: Up to $1000 <br/>
+               • High: Up to $500 <br/>
+               • Medium: Up to $250 <br/>
+               • Low: Up to $50 <br/>
+              </p>
+            </div> 
+          </div>
+
+      </div>
+    
+</div>
+
+
+
+
+<div class="main-docs-container">
+    <h6 class="main-docs-container-title">Frequently Asked Questions</h6> 
+    
+    <div class="main-docs-container-in">
+      <h6 class="main-docs-container-in-title">General Questions</h6> 
+      <div class="main-docs-container-in-cotnaiers main-docs-container-in-cotnaiers-two">
+        <div class="main-docs-container-in-container">
+          <div class="main-docs-container-in-container-title">❓ What is Lend.Meme?</div>
+          <p class="main-docs-container-in-container-desc">Lendragon.org is the first decentralized lending protocol specifically designed for meme tokens on Solana. Users can supply meme tokens to earn interest or use them as collateral for borrowing.</p>
+        </div>  
+        <div class="main-docs-container-in-container">
+          <div class="main-docs-container-in-container-title">🔒 Are my tokens safe?</div>
+          <p class="main-docs-container-in-container-desc">The protocol will be audited by OtterSec and implements multiple security measures including multi-sig governance, conservative risk parameters, and dual oracle systems. However, as with any DeFi protocol, users should understand the risks involved..</p>
+        </div> 
+        <div class="main-docs-container-in-container">
+            <div class="main-docs-container-in-container-title">💰 How do I earn interest?</div>
+            <p class="main-docs-container-in-container-desc">Supply your meme tokens to the protocol to start earning interest. The APY varies based on market conditions and pool utilization. You'll also earn additional $MEME rewards for participating.            </p>
+        </div>  
+      </div>
+    </div> 
+
+    <div class="main-docs-container-in">
+        <h6 class="main-docs-container-in-title">Supply & Borrow</h6> 
+        <div class="main-docs-container-in-cotnaiers main-docs-container-in-cotnaiers-two">
+          <div class="main-docs-container-in-container">
+            <div class="main-docs-container-in-container-title">📈 How are interest rates determined?</div>
+            <p class="main-docs-container-in-container-desc">Interest rates are dynamic and based on pool utilization. Higher utilization leads to higher rates to encourage more deposits and fewer borrowers. Lower utilization results in lower rates to encourage borrowing.</p>
+          </div>  
+          <div class="main-docs-container-in-container">
+            <div class="main-docs-container-in-container-title">🏦 What is collateral?</div>
+            <p class="main-docs-container-in-container-desc">Collateral is the tokens you supply that secure your borrowed positions. Different tokens have different collateral factors that determine how much you can borrow against them.</p>
+          </div> 
+          <div class="main-docs-container-in-container">
+              <div class="main-docs-container-in-container-title">⚡ Can I withdraw anytime?</div>
+              <p class="main-docs-container-in-container-desc">Yes, you can withdraw your supplied tokens at any time as long as you're not using them as collateral for an active borrow position and there's sufficient liquidity in the pool. </p>
+          </div>  
+        </div>
+    </div> 
+
+    <div class="main-docs-container-in">
+        <h6 class="main-docs-container-in-title">Risk & Liquidation</h6> 
+        <div class="main-docs-container-in-cotnaiers main-docs-container-in-cotnaiers-two">
+          <div class="main-docs-container-in-container">
+            <div class="main-docs-container-in-container-title">⚠️ What is liquidation?</div>
+            <p class="main-docs-container-in-container-desc">Liquidation occurs when your health factor drops below 1. When liquidated, 20% of your borrowed amount is repaid by liquidators who receive your collateral at a 5% discount.            </p>
+          </div>  
+          <div class="main-docs-container-in-container">
+            <div class="main-docs-container-in-container-title">🎯 How do I avoid liquidation?</div>
+            <p class="main-docs-container-in-container-desc">Monitor your health factor regularly, maintain a safe buffer above 1, and adjust your position by either adding more collateral or reducing borrowed amounts when needed.            </p>
+          </div> 
+          <div class="main-docs-container-in-container">
+              <div class="main-docs-container-in-container-title">📊 What is health factor?</div>
+              <p class="main-docs-container-in-container-desc">Health factor is a metric that indicates how safe your borrowed position is from liquidation. It's based on your collateral value versus borrowed amount. Stay above 1 to avoid liquidation.              </p>
+          </div>  
+        </div>
+    </div> 
+
+    <div class="main-docs-container-in">
+        <h6 class="main-docs-container-in-title">Technical</h6> 
+        <div class="main-docs-container-in-cotnaiers main-docs-container-in-cotnaiers-two">
+          <div class="main-docs-container-in-container">
+            <div class="main-docs-container-in-container-title">🔄 How are prices determined?</div>
+            <p class="main-docs-container-in-container-desc">We use two oracle systems - Pyth as primary and Switchboard as backup - to ensure accurate and reliable price feeds for all supported tokens.
+
+            </p>
+          </div>  
+          <div class="main-docs-container-in-container">
+            <div class="main-docs-container-in-container-title">💎 What are cTokens?</div>
+            <p class="main-docs-container-in-container-desc">When you supply tokens, you receive cTokens that represent your deposit. These tokens automatically earn interest through their exchange rate with the underlying asset.</p>
+          </div> 
+          <div class="main-docs-container-in-container">
+              <div class="main-docs-container-in-container-title">🛠️ Which wallets are supported?</div>
+              <p class="main-docs-container-in-container-desc">We support all major Solana wallets including Phantom, Solflare, and other browser extensions. Make sure you have enough SOL for transaction fees.</p>
+          </div>  
+        </div>
+    </div> 
+
+
+
+        
+</div>
+
+
+
+
+
+
+
+
+
+ </main>
+
+  </body>
+</html>
